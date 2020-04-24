@@ -1,0 +1,85 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link href="bingo.css" type="text/css" rel="stylesheet">
+
+      </head>
+      <body class ="all">
+        <div id = "containerdiv">
+
+        <h1>Svenska spel bingo</h1>
+      <button onclick="location.href='/newboard'">Generera ny bingobricka</button>
+   <div>
+
+       <table align="center" valign="middle">
+           <tr>
+               <td id="1" class="num" onclick="tdclick(this);">{{data[0]}}</td>
+               <td id="2" class="num" onclick="tdclick(this);">{{data[1]}}</td>
+               <td id="3" class="num" onclick="tdclick(this);">{{data[2]}}</td>
+               <td id="4" class="num" onclick="tdclick(this);">{{data[3]}}</td>
+               <td id="5" class="num" onclick="tdclick(this);">{{data[4]}}</td>
+           </tr>
+           <tr>
+               <td id="6" class="num" onclick="tdclick(this);">{{data[5]}}</td>
+               <td id="7" class="num" onclick="tdclick(this);">{{data[6]}}</td>
+               <td id="8" class="num" onclick="tdclick(this);">{{data[7]}}</td>
+               <td id="9" class="num" onclick="tdclick(this);">{{data[8]}}</td>
+               <td id="10" class="num" onclick="tdclick(this);">{{data[9]}}</td>
+           </tr>
+           <tr>
+               <td id="11" class="num" onclick="tdclick(this);">{{data[10]}}</td>
+               <td id="12" class="num" onclick="tdclick(this);">{{data[11]}}</td>
+               <td id="13" class="num" onclick="tdclick(this);">{{data[12]}}</td>
+               <td id="14" class="num" onclick="tdclick(this);">{{data[13]}}</td>
+               <td id="15" class="num" onclick="tdclick(this);">{{data[14]}}</td>
+           </tr>
+           <tr>
+               <td id="16" class="num" onclick="tdclick(this);">{{data[15]}}</td>
+               <td id="17" class="num" onclick="tdclick(this);">{{data[16]}}</td>
+               <td id="18" class="num" onclick="tdclick(this);">{{data[17]}}</td>
+               <td id="19" class="num" onclick="tdclick(this);">{{data[18]}}</td>
+               <td id="20" class="num" onclick="tdclick(this);">{{data[19]}}</td>
+           </tr>
+           <tr>
+               <td id="21" class="num" onclick="tdclick(this);">{{data[20]}}</td>
+               <td id="22" class="num" onclick="tdclick(this);">{{data[21]}}</td>
+               <td id="23" class="num" onclick="tdclick(this);">{{data[22]}}</td>
+               <td id="24" class="num" onclick="tdclick(this);">{{data[23]}}</td>
+               <td id="25" class="num" onclick="tdclick(this);">{{data[24]}}</td>
+           </tr>
+       </table>
+
+   </div>
+   <div id="cheers" class="hide">
+
+     SKÅÅÅÅÅÅÅL
+   </div>
+   </div>
+   <script>
+   function tdclick(e) {
+     console.log(e.style.backgroundColor)
+     if(e.className == "num active"){
+       e.className = "num";
+     }
+     else{
+     e.className += " active";
+     }
+     showcheers();
+     //e.style.backgroundColor = '#007d00';
+     //e.style.backgr('clicked', true);
+     //this.attr.clicked = true;
+   }
+
+   function showcheers()
+   {
+     var div2 = document.getElementById("cheers");
+     div2.className="show";
+     setTimeout(function() {
+       div2.className="hide";
+     }, 3000);
+   }
+    </script>
+
+
+      </body>
+    </html>
