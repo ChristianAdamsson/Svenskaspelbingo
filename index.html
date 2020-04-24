@@ -16,7 +16,7 @@
        SKÅÅÅÅÅÅÅL!!
      </div>
       <div id="bingo" class="hide"> BiNGOOOOO </div>
-
+     <div id="counter"> Antal bingos: 0, Antal skål: 0 </div>
        <table align="center" valign="middle">
            <tr>
                <td id="1" class="num" onclick="tdclick(this);"></td>
@@ -70,6 +70,8 @@
    <script>
    var checked = [];
    var bingoArray = [];
+   var counterskål = 0;
+   var counterbingo = 0;
    function unique(val, idx, self) {
             return self.indexOf(val) === idx;
         }
@@ -85,6 +87,7 @@
      checked.push(justchecked);
      checked = checked.filter(unique);
      showcheers();
+     counterskål += 1;
      //activeboxes = activeboxes.filter(unique);
 
        for (let i = 0; i < bingoArray.length; i++) {
@@ -93,7 +96,7 @@
                               j => checked.includes(j))
 
                           ){
-
+                          counterbingo += 1;
                           showbingo(); 
                           console.log("test");
                           bingoArray.splice(i, 1);
@@ -105,6 +108,8 @@
                           //console.log(bingoArray[i], checked, p.currentPoint());
 
                 }
+    counterdiv = document.getElementById("counter");
+     counterdiv.innerHTML = "Antal bingos: " + counterbingo.toString() + ", Antal skål: " + counterskål.toString();
    }
    function showbingo()
    {
@@ -119,7 +124,7 @@
    {
      var div2 = document.getElementById("cheers");
      div2.className="show";
-     div2.innerHTML = "SKÅÅÅÅL";
+     div2.innerHTML = "SKÅÅÅÅL!!";
      setTimeout(function() {
        div2.className="hide";
      }, 5000);
