@@ -79,15 +79,16 @@
      console.log(e.style.backgroundColor)
      if(e.className == "num active"){
        e.className = "num";
+       counterskål -= 1;
      }
      else{
      e.className += " active";
+     counterskål += 1;
      }
      var justchecked = parseInt(e.id);
      checked.push(justchecked);
      checked = checked.filter(unique);
      showcheers();
-     counterskål += 1;
      //activeboxes = activeboxes.filter(unique);
 
        for (let i = 0; i < bingoArray.length; i++) {
