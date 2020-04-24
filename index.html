@@ -13,39 +13,39 @@
 
        <table align="center" valign="middle">
            <tr>
-               <td id="1" class="num" onclick="tdclick(this);">{{data[0]}}</td>
-               <td id="2" class="num" onclick="tdclick(this);">{{data[1]}}</td>
-               <td id="3" class="num" onclick="tdclick(this);">{{data[2]}}</td>
-               <td id="4" class="num" onclick="tdclick(this);">{{data[3]}}</td>
-               <td id="5" class="num" onclick="tdclick(this);">{{data[4]}}</td>
+               <td id="1" class="num" onclick="tdclick(this);"></td>
+               <td id="2" class="num" onclick="tdclick(this);"></td>
+               <td id="3" class="num" onclick="tdclick(this);"></td>
+               <td id="4" class="num" onclick="tdclick(this);"></td>
+               <td id="5" class="num" onclick="tdclick(this);"></td>
            </tr>
            <tr>
-               <td id="6" class="num" onclick="tdclick(this);">{{data[5]}}</td>
-               <td id="7" class="num" onclick="tdclick(this);">{{data[6]}}</td>
-               <td id="8" class="num" onclick="tdclick(this);">{{data[7]}}</td>
-               <td id="9" class="num" onclick="tdclick(this);">{{data[8]}}</td>
-               <td id="10" class="num" onclick="tdclick(this);">{{data[9]}}</td>
+               <td id="6" class="num" onclick="tdclick(this);"></td>
+               <td id="7" class="num" onclick="tdclick(this);"></td>
+               <td id="8" class="num" onclick="tdclick(this);"></td>
+               <td id="9" class="num" onclick="tdclick(this);"></td>
+               <td id="10" class="num" onclick="tdclick(this);"></td>
            </tr>
            <tr>
-               <td id="11" class="num" onclick="tdclick(this);">{{data[10]}}</td>
-               <td id="12" class="num" onclick="tdclick(this);">{{data[11]}}</td>
-               <td id="13" class="num" onclick="tdclick(this);">{{data[12]}}</td>
-               <td id="14" class="num" onclick="tdclick(this);">{{data[13]}}</td>
-               <td id="15" class="num" onclick="tdclick(this);">{{data[14]}}</td>
+               <td id="11" class="num" onclick="tdclick(this);"></td>
+               <td id="12" class="num" onclick="tdclick(this);"></td>
+               <td id="13" class="num" onclick="tdclick(this);"></td>
+               <td id="14" class="num" onclick="tdclick(this);"></td>
+               <td id="15" class="num" onclick="tdclick(this);"></td>
            </tr>
            <tr>
-               <td id="16" class="num" onclick="tdclick(this);">{{data[15]}}</td>
-               <td id="17" class="num" onclick="tdclick(this);">{{data[16]}}</td>
-               <td id="18" class="num" onclick="tdclick(this);">{{data[17]}}</td>
-               <td id="19" class="num" onclick="tdclick(this);">{{data[18]}}</td>
-               <td id="20" class="num" onclick="tdclick(this);">{{data[19]}}</td>
+               <td id="16" class="num" onclick="tdclick(this);"></td>
+               <td id="17" class="num" onclick="tdclick(this);"></td>
+               <td id="18" class="num" onclick="tdclick(this);"></td>
+               <td id="19" class="num" onclick="tdclick(this);"></td>
+               <td id="20" class="num" onclick="tdclick(this);"></td>
            </tr>
            <tr>
-               <td id="21" class="num" onclick="tdclick(this);">{{data[20]}}</td>
-               <td id="22" class="num" onclick="tdclick(this);">{{data[21]}}</td>
-               <td id="23" class="num" onclick="tdclick(this);">{{data[22]}}</td>
-               <td id="24" class="num" onclick="tdclick(this);">{{data[23]}}</td>
-               <td id="25" class="num" onclick="tdclick(this);">{{data[24]}}</td>
+               <td id="21" class="num" onclick="tdclick(this);"></td>
+               <td id="22" class="num" onclick="tdclick(this);"></td>
+               <td id="23" class="num" onclick="tdclick(this);"></td>
+               <td id="24" class="num" onclick="tdclick(this);"></td>
+               <td id="25" class="num" onclick="tdclick(this);"></td>
            </tr>
        </table>
 
@@ -81,17 +81,20 @@
    function Newboard()
    {
      var ids = [];
-     all = {
-       '1', '2', '3','4', '5', '6', '7', '8', '9', 'test123', 'abc'
-     }
+     all = ['STEN', 'Phistr nämner "noten"', 'Pinkman blir sur','Någon startar guldroll innan boss', 'Pawlin dör', 'Larsfilipsson förlorar sina buffs', 'Migrän förklarar LOS', 'Deeeee Haqqani', 'Danebanane tranqar', 'Någon annan får bingo',
+      'Druid loot', 'En bra BoE droppar', 'Cala o Erica blir mixed upp', '60% mount påverkar kollektivet', 'Aftonbladet distraherar', 'Fatfingrar cds', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27']
     size = 25;
     resultingboard = [0] * size;
-    for (let i = 1; i < size; i++){
+    for (let i = 1; i <= size; i++){
     index = Math.floor(Math.random() * all.length)
     resultingboard[i] = all[index]
+    document.getElementById(i.toString()).innerHTML = all[index];
+    document.getElementById(i.toString()).className = "num";
+    all.splice(index, 1);
 
    }
    data = resultingboard;
+   document.getElementById('1').innerHTML = 'test';
    }
     </script>
 
