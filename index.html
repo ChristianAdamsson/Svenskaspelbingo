@@ -15,6 +15,7 @@
      <div id="cheers" class="hide">
        SKÅÅÅÅÅÅÅL!!
      </div>
+      <div id="bingo" class="hide"> BiNGOOOOO </div>
 
        <table align="center" valign="middle">
            <tr>
@@ -67,6 +68,11 @@
    </ul>
    </div>
    <script>
+   var checked = [];
+   var gotbingo = false;
+   function unique(val, idx, self) {
+            return self.indexOf(val) === idx;
+        }
    function tdclick(e) {
      console.log(e.style.backgroundColor)
      if(e.className == "num active"){
@@ -76,11 +82,53 @@
      e.className += " active";
      }
      showcheers();
-     //e.style.backgroundColor = '#007d00';
-     //e.style.backgr('clicked', true);
-     //this.attr.clicked = true;
-   }
+     var justchecked = parseInt(e.id);
+     checked.push(justchecked);
+     checked = checked.filter(unique);
+     //activeboxes = activeboxes.filter(unique);
 
+     var bingoArray = [
+           [1, 2, 3, 4, 5],
+           [6, 7, 8, 9, 10],
+           [11, 12, 13, 14, 15],
+           [16, 17, 18, 19, 20],
+           [21, 22, 23, 24, 25],
+           [1, 6, 11, 16, 21],
+           [2, 7, 12, 17, 22],
+           [3, 8, 13, 18, 23],
+           [4, 9, 14, 19, 24],
+           [5, 10, 15, 20, 25],
+           [1, 7, 13, 19, 25],
+           [5, 9, 13, 17, 21]
+       ]
+       if(!gotbingo){
+       for (let i = 0; i < bingoArray.length; i++) {
+                      if (
+                          bingoArray[i].every(
+                              j => checked.includes(j))
+
+                          ){
+
+                          showbingo();
+                          gotbingo = true;
+                          console.log("test");
+                          }
+                          //var div3 = document.getElementById("bingo");
+                          //div3.innerHTML = "BINGOOOOO";
+
+                          //console.log(bingoArray[i], checked, p.currentPoint());
+                  }
+
+                }
+   }
+   function showbingo()
+   {
+     var div3 = document.getElementById("bingo");
+     div3.className="show";
+     setTimeout(function() {
+       div3.className="hide";
+     }, 3000);
+   }
    function showcheers()
    {
      var div2 = document.getElementById("cheers");
