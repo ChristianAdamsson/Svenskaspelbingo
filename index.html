@@ -94,8 +94,7 @@
 
                           ){
 
-                          showbingo();
-                          gotbingo = true;
+                          showbingo(); 
                           console.log("test");
                           bingoArray.splice(i, 1);
                           }
@@ -108,7 +107,7 @@
    }
    function showbingo()
    {
-     var div2 = document.getElementById("cheers");
+     var div2 = document.getElementById("bingo");
      div2.className="show";
      div2.innerHTML = "BINGOOO, drink up";
      setTimeout(function() {
