@@ -55,7 +55,9 @@ h1 {
   margin-top: 10px;
   color: #fae105;
 }
-
+#counter {
+text-align: center;
+}
 li {
   font-size: 20px;
 
