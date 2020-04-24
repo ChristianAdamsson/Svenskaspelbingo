@@ -81,7 +81,6 @@
      else{
      e.className += " active";
      }
-     showcheers();
      var justchecked = parseInt(e.id);
      checked.push(justchecked);
      checked = checked.filter(unique);
@@ -98,6 +97,9 @@
                           console.log("test");
                           bingoArray.splice(i, 1);
                           }
+                        else{
+                          showcheers();
+                        }
                           //var div3 = document.getElementById("bingo");
                           //div3.innerHTML = "BINGOOOOO";
 
