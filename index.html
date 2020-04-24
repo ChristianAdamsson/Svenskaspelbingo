@@ -8,7 +8,7 @@
         <div id = "containerdiv">
 
         <h1>Svenska spel bingo</h1>
-      <button onclick="location.href='/newboard'">Generera ny bingobricka</button>
+      <button onclick="Newboard();">Generera ny bingobricka</button>
    <div>
 
        <table align="center" valign="middle">
@@ -77,6 +77,21 @@
      setTimeout(function() {
        div2.className="hide";
      }, 3000);
+   }
+   function Newboard()
+   {
+     var ids = [];
+     all = {
+       '1', '2', '3','4', '5', '6', '7', '8', '9', 'test123', 'abc'
+     }
+    size = 25;
+    resultingboard = [0] * size;
+    for (let i = 1; i < size; i++){
+    index = Math.floor(Math.random() * all.length)
+    resultingboard[i] = all[index]
+
+   }
+   data = resultingboard;
    }
     </script>
 
